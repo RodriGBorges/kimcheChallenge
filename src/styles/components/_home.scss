@@ -105,3 +105,30 @@ body {
     }
 
 }
+
+//Vista Dekstop 
+
+@media (min-width: 768px) {
+
+    .home h4 {
+        max-width: 920px;
+    }
+
+    .home div.searchContainer {
+        max-width: 920px;
+    }
+
+    .home div.searchContainer form {
+        max-width: 500px;
+    }
+
+    .home div.searchContainer div {
+        button:first-child {
+            margin-right: 30px;
+        }
+    }
+
+    .home section {
+        max-width: 920px;
+    }
+}
