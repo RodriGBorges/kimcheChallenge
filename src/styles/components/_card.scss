@@ -1,0 +1,53 @@
+div.countryCard-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+div.countryCard-container article.card {
+    background-color: $white;
+    width: 180px;
+    height: 140px;
+    border: 2px solid $teal;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    div.head {
+        position: relative;
+        small {
+            color: $dark;
+            position: absolute;
+            top: -5px;
+            left: 10px;
+        }
+        p {
+            color: $dark;
+            margin: 10px 30px;
+        }
+        i {
+            position: absolute;
+            top: 0px;
+            right: 10px;
+        }
+    }
+    div.info {
+        position: relative;
+        p {
+            color: $dark;
+            margin: 0px 10px 10px 10px;
+        }
+        small {
+            position: absolute;
+            bottom: -15px;
+            right: 10px;
+            text-decoration: underline;
+        }
+    }
+}
+
+@media (min-width: 400px) {
+
+    div.countryCard-container {
+        justify-content: space-between;
+    }
+
+}

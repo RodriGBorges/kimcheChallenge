@@ -1,0 +1,70 @@
+//Empiezo con los estilos, mobile first
+
+body {
+    background-color: $background;
+}
+
+.home h1.header {
+    color: $white;
+    background-color: $teal;
+    text-align: center;
+    padding: 5px;
+    height: 50px;
+}
+
+.home h4 {
+    width: 90%;
+    margin: 10px auto;
+}
+
+.home div.searchContainer {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.home div.searchContainer form {
+    position: relative;
+    input {
+        padding: 10px 10px 10px 40px;
+        border-radius: 15px;
+        border: 2px solid $teal;
+        width: 100%;
+    }
+    button {
+        padding: 10px;
+        position: absolute;
+        left: 5px;
+        top: 2px;
+        cursor: pointer;
+    }
+}
+
+.home div.searchContainer div {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    button {
+        background-color: $white;
+        border-radius: 10px;
+        border: 2px solid $teal;
+        padding: 5px 25px;
+        font-size: 14px;
+    }
+}
+
+.home section {
+    width: 90%;
+    margin: 0 auto;
+    h2 {
+        margin: 20px auto;
+    }
+}
+
+.home h2.footer {
+    color: $white;
+    background-color: $teal;
+    padding: 5px;
+    text-align: center;
+}
