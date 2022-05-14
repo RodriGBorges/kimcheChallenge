@@ -26,6 +26,7 @@ body {
 
 .home div.searchContainer form {
     position: relative;
+    width: 100%;
     input {
         padding: 10px 10px 10px 40px;
         border-radius: 15px;
@@ -51,6 +52,8 @@ body {
         border: 2px solid $teal;
         padding: 5px 25px;
         font-size: 14px;
+        height: 40px;
+        cursor: pointer;
     }
 }
 
@@ -67,4 +70,38 @@ body {
     background-color: $teal;
     padding: 5px;
     text-align: center;
+}
+
+// Vista tablet 
+
+@media (min-width: 425px) {
+
+    .home div.searchContainer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .home div.searchContainer form {
+        input:focus {
+            border: 2px solid $teal;
+            box-shadow: 0px 0px 5px $black;
+        }
+        button:hover {
+            color: $turquoise;
+        }
+    }
+    
+    .home div.searchContainer div {
+        margin-top: 0px;
+        justify-content: space-between;
+        button {
+            width: 120px;
+            margin-left: 20px;
+        }
+        button:hover {
+            color: $turquoise;
+            box-shadow: 0px 0px 5px $black;
+        }
+    }
+
 }

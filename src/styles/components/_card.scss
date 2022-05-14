@@ -5,6 +5,7 @@ div.countryCard-container {
 }
 
 div.countryCard-container article.card {
+    position: relative;
     background-color: $white;
     width: 180px;
     height: 140px;
@@ -12,11 +13,10 @@ div.countryCard-container article.card {
     border-radius: 10px;
     margin-bottom: 20px;
     div.head {
-        position: relative;
         small {
             color: $dark;
             position: absolute;
-            top: -5px;
+            top: 5px;
             left: 10px;
         }
         p {
@@ -25,21 +25,21 @@ div.countryCard-container article.card {
         }
         i {
             position: absolute;
-            top: 0px;
+            top: 10px;
             right: 10px;
         }
     }
     div.info {
-        position: relative;
         p {
             color: $dark;
             margin: 0px 10px 10px 10px;
         }
         small {
             position: absolute;
-            bottom: -15px;
+            bottom: 5px;
             right: 10px;
             text-decoration: underline;
+            cursor: pointer;
         }
     }
 }
@@ -47,7 +47,49 @@ div.countryCard-container article.card {
 @media (min-width: 400px) {
 
     div.countryCard-container {
+        justify-content: space-around;
+    }
+
+}
+
+//Vista Tablet
+
+@media (min-width: 425px) {
+
+    div.countryCard-container {
         justify-content: space-between;
+    }
+
+    div.countryCard-container article.card:hover {
+        box-shadow: 0px 0px 5px $black;
+    }
+    div.countryCard-container article.card {
+        width: 48%;
+        max-width: 200px;
+        height: 180px;
+        div.head {
+            small {
+                font-size: 16px;
+            }
+            p {
+                font-size: 20px;
+            }
+        }
+        div.info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 120px;
+            p {
+                font-size: 18px;
+            }
+            small {
+                text-decoration: none;
+            }
+            small:hover {
+                color: $turquoise;
+            }
+        }
     }
 
 }

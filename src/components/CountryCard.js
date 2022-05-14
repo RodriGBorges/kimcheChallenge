@@ -8,7 +8,7 @@ export const CountryCard = () => {
                 <div className='head'>
                     <small>Ar</small>
                     <p>Argentina</p>
-                    <i class="fas fa-flag"></i>
+                    <i className="fas fa-flag"></i>
                 </div>
                 <div className='info'>
                     <p>Capital: Buenos Aires</p>
@@ -21,7 +21,7 @@ export const CountryCard = () => {
                 <div className='head'>
                     <small>Ar</small>
                     <p>Argentina</p>
-                    <i class="fas fa-flag"></i>
+                    <i className="fas fa-flag"></i>
                 </div>
                 <div className='info'>
                     <p>Capital: Buenos Aires</p>
@@ -34,7 +34,7 @@ export const CountryCard = () => {
                 <div className='head'>
                     <small>Ar</small>
                     <p>Argentina</p>
-                    <i class="fas fa-flag"></i>
+                    <i className="fas fa-flag"></i>
                 </div>
                 <div className='info'>
                     <p>Capital: Buenos Aires</p>
@@ -47,7 +47,7 @@ export const CountryCard = () => {
                 <div className='head'>
                     <small>Ar</small>
                     <p>Argentina</p>
-                    <i class="fas fa-flag"></i>
+                    <i className="fas fa-flag"></i>
                 </div>
                 <div className='info'>
                     <p>Capital: Buenos Aires</p>
