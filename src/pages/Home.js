@@ -1,45 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { CountryCard } from '../components/CountryCard';
 
-export const Home = () => {
-
-    // Para asegurarme decido empezar por traerme los datos del playground que prepararon en GraphQL ya que nunca lo había utilizado.
-    useEffect(() => {
-    fetch('https://countries.trevorblades.com', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ query: `
-        query {
-        countries {
-            code
-            emoji
-            name
-            capital
-            phone
-            currency
-            emojiU
-            continent {
-            name
-            }
-            languages {
-            name
-            native
-            }
-            states {
-            name
-            }
-        }
-        }
-        `})
-    })
-    .then(res => res.json())
-    .then(res => {
-        console.log(res.data)
-    })
-    })
+export const Home = ({countries}) => {
 
     return (
         <div className='home'>
+            
             <h1 className='header'>Country Search</h1>
             <h4>Enter the first letters of the country. You can group by continent or language.</h4>
             <div className='searchContainer'>
@@ -55,10 +21,26 @@ export const Home = () => {
                 </div>
             </div>
             <section>
-                <h2>Asia</h2>
-                <CountryCard />
+                <h2>Countries</h2>
+                <div className='countryCard-container'>
+                    {/* Paso de datos estáticos a dinámicos  */}
+                    {
+                        countries.map((country, i) => (
+                            <CountryCard
+                            key={i + 1}
+                            i= {i}
+                            code= {country.code}
+                            name= {country.name}
+                            emoji = {country.emoji}
+                            capital= {country.capital}
+                            phone= {country.phone}
+                            currency= {country.currency}
+                            />
+                        ))
+                    }
+                </div>
             </section>
-            <section>
+            {/* <section>
                 <h2>Africa</h2>
                 <CountryCard />
             </section>
@@ -81,7 +63,7 @@ export const Home = () => {
             <section>
                 <h2>Antarctica</h2>
                 <CountryCard />
-            </section>
+            </section> */}
             <h2 className='footer'>Kimche Challenge</h2>
         </div>
     )

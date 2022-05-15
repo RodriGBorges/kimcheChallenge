@@ -1,61 +1,20 @@
 import React from 'react';
 
 // Hago las tarjetas de los países por separado para no cargar tanto el home
-export const CountryCard = () => {
+export const CountryCard = ({ i, code, name, emoji, capital, phone, currency}) => {
     return (
-        <div className='countryCard-container'>
-            <article className='card'>
-                <div className='head'>
-                    <small>Ar</small>
-                    <p>Argentina</p>
-                    <i className="fas fa-flag"></i>
-                </div>
-                <div className='info'>
-                    <p>Capital: Buenos Aires</p>
-                    <p>Phone: 54</p>
-                    <p>Currency: ARS</p>
-                    <small>more</small>
-                </div>
-            </article>
-            <article className='card'>
-                <div className='head'>
-                    <small>Ar</small>
-                    <p>Argentina</p>
-                    <i className="fas fa-flag"></i>
-                </div>
-                <div className='info'>
-                    <p>Capital: Buenos Aires</p>
-                    <p>Phone: 54</p>
-                    <p>Currency: ARS</p>
-                    <small>more</small>
-                </div>
-            </article>
-            <article className='card'>
-                <div className='head'>
-                    <small>Ar</small>
-                    <p>Argentina</p>
-                    <i className="fas fa-flag"></i>
-                </div>
-                <div className='info'>
-                    <p>Capital: Buenos Aires</p>
-                    <p>Phone: 54</p>
-                    <p>Currency: ARS</p>
-                    <small>more</small>
-                </div>
-            </article>
-            <article className='card'>
-                <div className='head'>
-                    <small>Ar</small>
-                    <p>Argentina</p>
-                    <i className="fas fa-flag"></i>
-                </div>
-                <div className='info'>
-                    <p>Capital: Buenos Aires</p>
-                    <p>Phone: 54</p>
-                    <p>Currency: ARS</p>
-                    <small>more</small>
-                </div>
-            </article>
-        </div>
+        <article className='card'>
+            <div className='head'>
+                <small>{code}</small>
+                <p>{name}</p>
+                <i>{emoji}</i>
+            </div>
+            <div className='info'>
+                <p>Capital: {capital}</p>
+                <p>Phone: {phone}</p>
+                <p>Currency: {currency}</p>
+                <small>more</small>
+            </div>
+        </article>
     )
 }
