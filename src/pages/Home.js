@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CountryCard } from '../components/CountryCard';
 
 export const Home = ({countries}) => {
+
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+    }
+
+    const handleInputChange = (e) => {
+        setSearchTerm(e.target.value)
+    }
+
+    const handleContinent = () => {
+        console.log('continent')
+    }
+    
+    const handleLanguage = () => {
+        console.log('language')
+    }
 
     return (
         <div className='home'>
@@ -9,15 +27,20 @@ export const Home = ({countries}) => {
             <h1 className='header'>Country Search</h1>
             <h4>Enter the first letters of the country. You can group by continent or language.</h4>
             <div className='searchContainer'>
-                <form>
-                    <input  type="text" className='search' placeholder="Chi..."/>
-                    <button>
+                <form onSubmit={handleSubmit}>
+                    <input  
+                    type="text" 
+                    className='search' 
+                    placeholder="Chi..."
+                    onChange={handleInputChange}
+                    />
+                    <button type='submit'>
                         <i className='icon-search fas fa-search'></i>
                     </button>
                 </form>
                 <div>
-                    <button>Continent</button>
-                    <button>Language</button>
+                    <button onClick={handleContinent}>Continent</button>
+                    <button onClick={handleLanguage}>Language</button>
                 </div>
             </div>
             <section>
@@ -25,7 +48,13 @@ export const Home = ({countries}) => {
                 <div className='countryCard-container'>
                     {/* Paso de datos estáticos a dinámicos  */}
                     {
-                        countries.map((country, i) => (
+                        countries.filter((country) => {
+                            if(searchTerm === "") {
+                                return country
+                            } else if (country.name.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
+                                return country
+                            }
+                        }).map((country, i) => (
                             <CountryCard
                             key={i + 1}
                             i= {i}
