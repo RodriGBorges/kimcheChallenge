@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Hago las tarjetas de los países por separado para no cargar tanto el home
-export const CountryCard = ({ i, code, name, emoji, capital, phone, currency}) => {
+export const CountryCard = ({ code, name, emoji, capital, phone, currency }) => {
     return (
         <article className='card'>
             <div className='head'>

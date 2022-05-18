@@ -13,14 +13,6 @@ export const Home = ({countries}) => {
         setSearchTerm(e.target.value)
     }
 
-    const handleContinent = () => {
-        console.log('continent')
-    }
-    
-    const handleLanguage = () => {
-        console.log('language')
-    }
-
     return (
         <div className='home'>
             
@@ -39,8 +31,8 @@ export const Home = ({countries}) => {
                     </button>
                 </form>
                 <div>
-                    <button onClick={handleContinent}>Continent</button>
-                    <button onClick={handleLanguage}>Language</button>
+                    <button>Continent</button>
+                    <button>Language</button>
                 </div>
             </div>
             <section>
@@ -57,13 +49,7 @@ export const Home = ({countries}) => {
                         }).map((country, i) => (
                             <CountryCard
                             key={i + 1}
-                            i= {i}
-                            code= {country.code}
-                            name= {country.name}
-                            emoji = {country.emoji}
-                            capital= {country.capital}
-                            phone= {country.phone}
-                            currency= {country.currency}
+                            {...country}
                             />
                         ))
                     }
